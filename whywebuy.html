@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+     <!-- Header -->
+     <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./assest//logo.png" alt="">
+                </a>
+            </div>
+            <div class="mobile-menu">☰</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">HomePage</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="getquote.html">Get a Quote</a></li>
+                    <li><a href="whywebuy.html">What We Buy</a></li>
+                    <li><a href="faqs.html">FAQ'S</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>This is What We Buy Page.</h1>
+            <!-- <p>We help businesses recover value from unclaimed lost items by purchasing them in bulk, saving you time and storage costs while generating additional income.</p>
+            <a href="#contact" class="btn">Request a Quote</a>
+            <a href="#how-it-works" class="btn btn-outline">Learn More</a> -->
+        </div>
+    </section>
+
+
+
+     <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>Lost Property Solutions specializes in purchasing unclaimed lost property from businesses, helping them recover value while maintaining proper documentation and compliance.</p>
+                <div class="social-links">
+                    <a href="#">f</a>
+                    <a href="#">in</a>
+                    <a href="#">t</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>123 Business Avenue</p>
+                <p>London, UK</p>
+                <p>info@lostpropertysolutions.com</p>
+                <p>+44 123 456 7890</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Lost Property Solutions. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+    
+</body>
+</html>
