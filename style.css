@@ -156,7 +156,9 @@
             margin-right: 1rem;
             font-size: 0.95rem;
         }
-        
+        .home-image{
+            width: 100vh;
+        }
         .btn:hover {
             background-color: var(--white);
             color: var(--black);
@@ -282,11 +284,17 @@
     .items-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .home-image{
+        width: 30vh;
+    }
 }
 
 @media (max-width: 500px) {
     .items-grid {
         grid-template-columns: 1fr;
+    }
+    .home-image{
+        width: 25vh;
     }
 }
         /* Process Section */
