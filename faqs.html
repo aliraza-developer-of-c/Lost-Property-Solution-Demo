@@ -321,7 +321,7 @@
         <div class="faq-cta">
             <h2>Still have questions?</h2>
             <p>If you have any further questions, please don't hesitate to contact us!</p>
-            <a href="#contact" class="btn">Contact Us</a>
+            <a href="contact.html" class="btn">Contact Us</a>
         </div>
     </main>
 
@@ -414,7 +414,17 @@
             }
         });
 
-
+            // FAQ toggle
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        question.classList.toggle('active');
+        const answer = question.nextElementSibling;
+        answer.classList.toggle('show');
+      });
+    });
+        
+        
     </script>
     
 </body>

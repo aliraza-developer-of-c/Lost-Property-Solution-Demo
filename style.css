@@ -115,7 +115,7 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+                        url('https://plus.unsplash.com/premium_photo-1661754922567-1cc4891cd709?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
             height: 90vh;
             display: flex;
             align-items: center;
@@ -157,7 +157,7 @@
             font-size: 0.95rem;
         }
         .home-image{
-            width: 100vh;
+            width: 35vh;
         }
         .btn:hover {
             background-color: var(--white);
@@ -186,6 +186,10 @@
             text-align: center;
             margin-bottom: 3.5rem;
         }
+        .section-img {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
         
         .section-title h2 {
             font-size: 2.5rem;
@@ -195,9 +199,10 @@
         
         .section-title p {
             color: var(--gray-medium);
-            max-width: 700px;
+            /* max-width: 700px; */
             margin: 0 auto;
             font-size: 1.1rem;
+            
         }
         
         .value-grid {
@@ -285,7 +290,7 @@
         grid-template-columns: repeat(2, 1fr);
     }
     .home-image{
-        width: 30vh;
+        width: 25vh;
     }
 }
 
@@ -294,7 +299,7 @@
         grid-template-columns: 1fr;
     }
     .home-image{
-        width: 25vh;
+        width: 20vh;
     }
 }
         /* Process Section */
