@@ -50,6 +50,7 @@
 
         .about-content p {
             margin-bottom: 1.5rem;
+            text-align: justify;
         }
 
         .values-grid {
@@ -137,7 +138,18 @@
         }
 
         @media (max-width: 768px) {
-           
+            .about-content p {
+                margin: 1.5rem;
+                text-align: justify;
+            }
+            .values-grid {
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
 
             .page-header h1 {
                 font-size: 2rem;
@@ -229,7 +241,8 @@
         <div class="values-grid">
             <div class="value-card">
                 <h3>Unclaimd</h3>
-                <p>Specializes in converting your lost property and unclaimed items into immediate cash. We understand that managing surplus inventory can be time-consuming and costly.</p>
+                <p>Specializes in converting your lost property and unclaimed items into immediate cash. We understand
+                    that managing surplus inventory can be time-consuming and costly.</p>
             </div>
             <div class="value-card">
                 <h3>Transparency</h3>
@@ -319,12 +332,14 @@
             <div class="method">
                 <h3>Online Quote System</h3>
                 <p>Simply provide details of your inventory through our user-friendly online form.</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd3Hok3tEaY9YH-rlNjjM5nwh29SEkaLF8_VtOsKiv0kqQTjA/viewform?usp=dialog" target="_blank" class="btn">Get Online Quote</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd3Hok3tEaY9YH-rlNjjM5nwh29SEkaLF8_VtOsKiv0kqQTjA/viewform?usp=dialog"
+                    target="_blank" class="btn">Get Online Quote</a>
             </div>
             <div class="method">
                 <h3>Email Inventory Submission</h3>
                 <p>Send us a detailed list of your items for a personalized quote.</p>
-                <a href="https://mail.google.com/mail/?view=cm&to=contact@unclaimd.com" target="_blank" class="btn">Email Us</a>
+                <a href="https://mail.google.com/mail/?view=cm&to=contact@unclaimd.com" target="_blank"
+                    class="btn">Email Us</a>
             </div>
         </div>
 
@@ -340,7 +355,8 @@
         <h2>Ready to Turn Your Unclaimed Inventory into Cash?</h2>
         <p>If you have any questions or would like to learn more about our services, please don't hesitate to contact
             us. We look forward to helping you turn your unclaimed inventory into cash.</p>
-            <a href="https://mail.google.com/mail/?view=cm&to=contact@unclaimd.com" target="_blank" class="btn">Contact Us</a>
+        <a href="https://mail.google.com/mail/?view=cm&to=contact@unclaimd.com" target="_blank" class="btn">Contact
+            Us</a>
     </div>
     <!-- Footer -->
     <footer id="contact">
