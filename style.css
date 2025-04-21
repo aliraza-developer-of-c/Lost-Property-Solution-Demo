@@ -270,7 +270,7 @@
 
         .value-card {
             background-color: var(--white);
-            border-radius: 8px;
+            /* border-radius: 8px; */
             padding: 2rem;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;

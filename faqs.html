@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,20 +16,20 @@
             --gray-light: #f5f5f5;
             --gray-lighter: #f9f9f9;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Helvetica Neue', Arial, sans-serif;
         }
-        
+
         body {
             background-color: var(--white);
             color: var(--gray-dark);
             line-height: 1.6;
         }
-        
+
         /* Header - Consistent with other pages */
         header {
             background-color: transparent;
@@ -41,56 +42,56 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         /* FAQ Hero Section */
         .faq-hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-                        height: 90vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 90vh;
             display: flex;
             align-items: center;
             padding-top: 80px;
         }
-        
+
         .faq-hero-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
             color: var(--white);
         }
-        
+
         .faq-hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
             color: var(--white);
         }
-        
+
         /* FAQ Content */
         .faq-container {
             max-width: 1000px;
             margin: 3rem auto;
             padding: 0 2rem;
         }
-        
+
         .faq-section {
             margin-bottom: 3rem;
         }
-        
+
         .faq-section h2 {
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--black);
         }
-        
+
         .faq-item {
             margin-bottom: 1.5rem;
-            border: 1px solid rgba(0,0,0,0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 6px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
-        
+
         .faq-question {
             padding: 1.5rem;
             background-color: var(--gray-lighter);
@@ -101,41 +102,41 @@
             align-items: center;
             transition: background-color 0.3s ease;
         }
-        
+
         .faq-question:hover {
             background-color: var(--gray-light);
         }
-        
+
         .faq-question::after {
             content: '+';
             font-size: 1.5rem;
             transition: transform 0.3s ease;
         }
-        
+
         .faq-question.active::after {
             content: '-';
         }
-        
+
         .faq-answer {
             padding: 0 1.5rem;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease, padding 0.3s ease;
         }
-        
+
         .faq-answer.show {
             padding: 1.5rem;
             max-height: 1000px;
         }
-        
+
         .faq-answer p {
             margin-bottom: 1rem;
         }
-        
+
         .faq-answer p:last-child {
             margin-bottom: 0;
         }
-        
+
         /* Contact CTA */
         .faq-cta {
             text-align: center;
@@ -144,48 +145,49 @@
             background-color: var(--gray-light);
             border-radius: 8px;
         }
-        
+
         .faq-cta h2 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
         }
-        
+
         /* Footer - Consistent with other pages */
-        
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             .faq-hero h1 {
                 font-size: 2.2rem;
             }
-            
+
             .faq-section h2 {
                 font-size: 1.5rem;
             }
         }
     </style>
 </head>
+
 <body>
- <!-- Header -->
- <header>
-    <div class="header-container">
-      <div class="logo">
-        <a href="index.html">
-          <img src="./assest//logo.png" alt="" />
-        </a>
-      </div>
-      <div class="mobile-menu">☰</div>
-      <nav>
-        <ul>
-          
-          <li><a href="about.html">About</a></li>
-          <li><a href="whywebuy.html">What We Buy</a></li>
-          <li><a href="faqs.html">FAQ'S</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="getquote.html" class="get-btn">Get a Quote</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./assest//logo.png" alt="" />
+                </a>
+            </div>
+            <div class="mobile-menu">☰</div>
+            <nav>
+                <ul>
+
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="whywebuy.html">What We Buy</a></li>
+                    <li><a href="faqs.html">FAQ'S</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="getquote.html" class="get-btn">Get a Quote</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <!-- Hero Section -->
     <section class="faq-hero" id="home">
@@ -199,125 +201,142 @@
     <main class="faq-container">
         <section class="faq-section">
             <h2>General Questions</h2>
-            
+
             <div class="faq-item">
                 <div class="faq-question">What is Unclaimd?</div>
                 <div class="faq-answer">
-                    <p>Unclaimd is an online service that purchases lost property and unclaimed inventory from businesses. We provide a quick and efficient way to turn these assets into cash.</p>
+                    <p>Unclaimd is an online service that purchases lost property and unclaimed inventory from
+                        businesses. We provide a quick and efficient way to turn these assets into cash.</p>
                 </div>
             </div>
-            
+
             <div class="faq-item">
                 <div class="faq-question">What types of items does Unclaimd buy?</div>
                 <div class="faq-answer">
-                    <p>We buy a wide range of items, including electronics (smartphones, laptops, tablets, cameras), personal items (clothing, jewelry, accessories), and various other unclaimed goods. Please see our "What We Buy" page for a more detailed list.</p>
+                    <p>We buy a wide range of items, including electronics (smartphones, laptops, tablets, cameras),
+                        personal items (clothing, jewelry, accessories), and various other unclaimed goods. Please see
+                        our "What We Buy" page for a more detailed list.</p>
                 </div>
             </div>
-            
+
             <div class="faq-item">
                 <div class="faq-question">How does the process work?</div>
                 <div class="faq-answer">
-                    <p>You can submit your inventory through our online form, upload a document (Excel, PDF, Word), or email us a list. We'll review your inventory and provide you with a competitive quote. If you accept, we'll arrange for delivery and payment.</p>
+                    <p>You can submit your inventory through our online form, upload a document (Excel, PDF, Word), or
+                        email us a list. We'll review your inventory and provide you with a competitive quote. If you
+                        accept, we'll arrange for delivery and payment.</p>
                 </div>
             </div>
-            
+
             <div class="faq-item">
                 <div class="faq-question">How quickly will I receive a quote?</div>
                 <div class="faq-answer">
                     <p>We aim to respond to all quote requests within 48 business hours.</p>
                 </div>
             </div>
-            
+
             <div class="faq-item">
                 <div class="faq-question">How quickly will I get paid?</div>
                 <div class="faq-answer">
-                    <p>Payment speed depends on the size and complexity of the inventory, but we strive to process payments promptly after an agreement is reached.</p>
+                    <p>Payment speed depends on the size and complexity of the inventory, but we strive to process
+                        payments promptly after an agreement is reached.</p>
                 </div>
             </div>
         </section>
-        
+
         <section class="faq-section">
             <h2>Inventory & Quotes</h2>
-            
+
             <div class="faq-item">
                 <div class="faq-question">What information should I include in my inventory list?</div>
                 <div class="faq-answer">
-                    <p>Please include detailed descriptions, quantities, and condition of each item. For electronics, provide model numbers and specifications. The more details you can provide the more accurate our quote will be, but if you don't have the resources you can make a general list and we can sort through upon delivery and then provide a quote.</p>
+                    <p>Please include detailed descriptions, quantities, and condition of each item. For electronics,
+                        provide model numbers and specifications. The more details you can provide the more accurate our
+                        quote will be, but if you don't have the resources you can make a general list and we can sort
+                        through upon delivery and then provide a quote.</p>
                 </div>
             </div>
-            
+
             <div class="faq-item">
                 <div class="faq-question">Can I upload photos of my items?</div>
                 <div class="faq-answer">
-                    <p>Yes, photos can be helpful, especially for assessing the condition of items. You can include them in your uploaded documents or email.</p>
+                    <p>Yes, photos can be helpful, especially for assessing the condition of items. You can include them
+                        in your uploaded documents or email.</p>
                 </div>
             </div>
-            
+
             <div class="faq-item">
                 <div class="faq-question">Are quotes binding?</div>
                 <div class="faq-answer">
-                    <p>Quotes are subject to our terms and conditions. The final price may be adjusted based on the actual condition of the items.</p>
+                    <p>Quotes are subject to our terms and conditions. The final price may be adjusted based on the
+                        actual condition of the items.</p>
                 </div>
             </div>
-            
+
             <div class="faq-item">
                 <div class="faq-question">Do you buy individual items or only bulk inventories?</div>
                 <div class="faq-answer">
-                    <p>We primarily focus on purchasing bulk inventories, as this allows us to offer the best possible prices. However, we are happy to assess all submissions.</p>
+                    <p>We primarily focus on purchasing bulk inventories, as this allows us to offer the best possible
+                        prices. However, we are happy to assess all submissions.</p>
                 </div>
             </div>
         </section>
-        
+
         <section class="faq-section">
             <h2>Shipping & Logistics</h2>
-            
+
             <div class="faq-item">
                 <div class="faq-question">Do you handle shipping and collection?</div>
                 <div class="faq-answer">
-                    <p>This depends on the size and location of the inventory. We will discuss shipping and collection options with you during the quote process.</p>
+                    <p>This depends on the size and location of the inventory. We will discuss shipping and collection
+                        options with you during the quote process.</p>
                 </div>
             </div>
-            
+
             <div class="faq-item">
                 <div class="faq-question">Who pays for shipping?</div>
                 <div class="faq-answer">
                     <p>This will be discussed and agreed upon during the quote process.</p>
                 </div>
             </div>
-            
+
             <div class="faq-item">
                 <div class="faq-question">Do you buy internationally?</div>
                 <div class="faq-answer">
-                    <p>Currently, we primarily operate within the United Kingdom. Please contact us to discuss international inquiries.</p>
+                    <p>Currently, we primarily operate within the United Kingdom. Please contact us to discuss
+                        international inquiries.</p>
                 </div>
             </div>
         </section>
-        
+
         <section class="faq-section">
             <h2>Other Questions</h2>
-            
+
             <div class="faq-item">
                 <div class="faq-question">Do you guarantee data wiping on electronic devices?</div>
                 <div class="faq-answer">
-                    <p>Yes, we understand the importance of data security. We ensure that all data is securely wiped from electronic devices.</p>
+                    <p>Yes, we understand the importance of data security. We ensure that all data is securely wiped
+                        from electronic devices.</p>
                 </div>
             </div>
-            
+
             <div class="faq-item">
                 <div class="faq-question">What happens to the items you purchase?</div>
                 <div class="faq-answer">
-                    <p>We aim to give lost property a second life by reselling, refurbishing, or recycling items responsibly.</p>
+                    <p>We aim to give lost property a second life by reselling, refurbishing, or recycling items
+                        responsibly.</p>
                 </div>
             </div>
-            
+
             <div class="faq-item">
                 <div class="faq-question">How can I contact Unclaimd?</div>
                 <div class="faq-answer">
-                    <p>You can contact us via email at contact@unclaimd.com, by phone at +44 123 456 7890, or through the contact form on our website.</p>
+                    <p>You can contact us via email at contact@unclaimd.com, by phone at +44 123 456 7890, or through
+                        the contact form on our website.</p>
                 </div>
             </div>
         </section>
-        
+
         <div class="faq-cta">
             <h2>Still have questions?</h2>
             <p>If you have any further questions, please don't hesitate to contact us!</p>
@@ -325,49 +344,52 @@
         </div>
     </main>
 
-     <!-- Footer -->
-     <footer id="contact">
+
+    <!-- Footer -->
+    <footer id="contact">
         <div class="footer-container">
-          <div class="footer-col">
-            <h3>Quick Links</h3>
-            <a href="about.html">About</a>
-            <a href="whywebuy.html">What We Buy</a>
-            <a href="faqs.html">FAQ'S</a>
-            <a href="contact.html">Contact</a>
-            <a href="getquote.html">Get a Quote</a>
-          </div>
-          <div class="footer-col">
-            <h3>Contact Us</h3>
-            <p>123 Business Avenue</p>
-            <p>London, UK</p>
-            <p>info@lostpropertysolutions.com</p>
-            <p>+44 123 456 7890</p>
-          </div>
-          <div class="footer-col">
-            <div class="footer-logo">
-              <a href="index.html">
-                <img class="footer-logo-img" src="./assest//logo.png" alt="" />
-              </a>
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <img class="footer-logo-img" src="./assest//logo.png" alt="" />
+                    </a>
+                </div>
+                <p>
+                    Lost Property Solutions specializes in purchasing unclaimed lost
+                    property from businesses, helping them recover value while
+                    maintaining proper documentation and compliance.
+                </p>
+                <div class="social-links">
+                    <a href="#">f</a>
+                    <a href="#">in</a>
+                    <a href="#">Y</a>
+                </div>
             </div>
-            <p>
-              Lost Property Solutions specializes in purchasing unclaimed lost
-              property from businesses, helping them recover value while
-              maintaining proper documentation and compliance.
-            </p>
-            <div class="social-links">
-              <a href="#">f</a>
-              <a href="#">in</a>
-              <a href="#">Y</a>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <a href="about.html">About</a>
+                <a href="whywebuy.html">What We Buy</a>
+                <a href="faqs.html">FAQ'S</a>
+                <a href="contact.html">Contact</a>
+                <a href="getquote.html">Get a Quote</a>
             </div>
-          </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p>123 Business Avenue</p>
+                <p>London, UK</p>
+                <p>info@lostpropertysolutions.com</p>
+                <p>+44 123 456 7890</p>
+            </div>
+
         </div>
         <div class="copyright">
-          <p>
-            &copy; 2025 Unclaimd Lost Property Asset Acquition Specialists. All
-            Rights Reserved.
-          </p>
+            <p>
+                &copy; 2025 Unclaimd Lost Property Asset Acquition Specialists. All
+                Rights Reserved.
+            </p>
         </div>
-      </footer>
+    </footer>
+
     <script>
         // Mobile Menu Toggle
         const mobileMenu = document.querySelector('.mobile-menu');
@@ -419,18 +441,19 @@
             }
         });
 
-            // FAQ toggle
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(question => {
-      question.addEventListener('click', () => {
-        question.classList.toggle('active');
-        const answer = question.nextElementSibling;
-        answer.classList.toggle('show');
-      });
-    });
-        
-        
+        // FAQ toggle
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                question.classList.toggle('active');
+                const answer = question.nextElementSibling;
+                answer.classList.toggle('show');
+            });
+        });
+
+
     </script>
-    
+
 </body>
+
 </html>
