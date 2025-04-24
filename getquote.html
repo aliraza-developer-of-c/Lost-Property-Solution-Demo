@@ -378,7 +378,8 @@
         height: 20px;
       }
 
-      @media only screen and (max-width: 767px) {
+      /* Mobile responsive styles */
+  @media only screen and (max-width: 767px) {
     /* Convert table to block layout */
     table, tbody, tr, td {
       display: block;
@@ -457,7 +458,7 @@
     
     /* Position delete button at top right */
     .delbtn {
-      position: absolute;
+      
       top: 10px;
       right: 10px;
     }
@@ -485,6 +486,7 @@
       padding: 8px;
     }
   }
+      
     </style>
   </head>
 
@@ -938,7 +940,7 @@
     
     /* Position delete button at top right */
     .delbtn {
-      position: absolute;
+      
       top: 10px;
       right: 10px;
     }
@@ -990,11 +992,15 @@
   </td>
   <td>
     <div class="fileupload">
-      <input type="file" name="photos[]" id="photos${index}" multiple accept="image/*" />
-      <button type="button" class="delbtn" onclick="deleteRow(this)">
+        <input type="file" name="photos[]" id="photos${index}" multiple accept="image/*" />
+        </div>
+        </td>
+        <td>
+    <div class="fileupload">
+    <button type="button" class="delbtn" onclick="deleteRow(this)">
         <img class="delimag" src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" alt="Delete" />
       </button>
-    </div>
+      </div>
   </td>
 </tr>
           `;
