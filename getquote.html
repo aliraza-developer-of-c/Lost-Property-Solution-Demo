@@ -234,7 +234,7 @@
       }
 
       .form-section h2 {
-        margin-top: 0;
+        margin-bottom: 35px;
         color: var(--black);
         font-size: 1.4rem;
         padding-bottom: 0.5rem;
@@ -355,6 +355,29 @@
           overflow-x: auto;
         }
       }
+
+      .fileupload {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* optional spacing */
+}
+
+.fileupload input[type="file"] {
+  flex-shrink: 1;
+}
+
+.delbtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.delimag {
+  width: 20px; /* or any size you want */
+  height: 20px;
+}
+
     </style>
   </head>
 
@@ -464,7 +487,7 @@
                     />
                   </td>
                   <td>
-                    <div class="file-upload">
+                    <div class="fileupload">
                       <input
                         type="file"
                         name="photos[]"
@@ -472,10 +495,7 @@
                         multiple
                         accept="image/*"
                       />
-                      <label for="photos0">Choose Files</label>
-                      <span class="file-name" id="file-name"
-                        >No files chosen</span
-                      >
+                      
                     </div>
                   </td>
                 </tr>
@@ -711,15 +731,13 @@
                 <input type="number" name="quantity[]" class="form-control" min="1" value="1" required />
               </td>
               <td>
-                <div class="file-upload">
-                  <input type="file" name="photos[]" id="photos${index}" multiple accept="image/*" />
-                  <div>
-                  <label for="photos${index}">Choose Files</label>
-                  
-                  <button type="button" class="delbtn" onclick="deleteRow(this)"> 
-                <img class='delimag'  src='https://cdn-icons-png.flaticon.com/512/6861/6861362.png'/></button>
-                </div>
-                </div>
+                <div class="fileupload">
+  <input type="file" name="photos[]" id="photos${index}" multiple accept="image/*" />
+  <button type="button" class="delbtn" onclick="deleteRow(this)">
+    <img class="delimag" src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" />
+  </button>
+</div>
+
               </td>
             </tr>
           `;
