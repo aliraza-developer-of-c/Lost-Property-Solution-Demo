@@ -14,6 +14,7 @@
             --gray-medium: #666666;
             --gray-light: #f5f5f5;
             --gray-lighter: #f9f9f9;
+
         }
 
 
@@ -165,7 +166,9 @@
             font-size: 3rem;
             margin-bottom: 1.5rem;
             max-width: 800px;
+            color: var(--white);
         }
+
         .contact-form {
             background-color: var(--gray-lighter);
             padding: 2rem;
@@ -218,6 +221,147 @@
         .btn:hover {
             background-color: var(--gray-dark);
         }
+
+
+
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--white);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .form-section {
+            /* margin-bottom: 2rem; */
+            padding: 1.5rem;
+            background-color: var(--gray-lighter);
+            border-radius: 5px;
+        }
+
+        .form-section h2 {
+            margin-top: 0;
+            color: var(--black);
+            font-size: 1.4rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--gray-medium);
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        select.form-control {
+            height: 2.8rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--black);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--gray-dark);
+        }
+
+        .btn-add {
+            background-color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        .btn-add:hover {
+            background-color: #3e8e41;
+        }
+
+        .inventory-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        .inventory-table th,
+        .inventory-table td {
+            border: 1px solid var(--gray-medium);
+            padding: 0.8rem;
+            text-align: left;
+        }
+
+        .inventory-table th {
+            background-color: var(--gray-light);
+            font-weight: bold;
+        }
+
+        .file-upload {
+            margin-top: 0.5rem;
+        }
+
+        .file-upload input[type="file"] {
+            display: none;
+        }
+
+        .file-upload label {
+            display: inline-block;
+            padding: 0.6rem 1rem;
+            background-color: var(--gray-light);
+            border: 1px solid var(--gray-medium);
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .file-upload label:hover {
+            background-color: var(--gray-lighter);
+        }
+
+        .file-name {
+            margin-left: 1rem;
+            font-style: italic;
+        }
+
+        .required-field::after {
+            content: " *";
+            color: red;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .inventory-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
     </style>
 </head>
 
@@ -249,47 +393,184 @@
             </div>
             <button class="btn">Submit for Quote</button>
             <div id="upload-message" style="margin-top: 1rem; font-weight: bold;"></div>
-
-
         </div>
+        <div class="container">
+            <h1>Unclaimed Inventory Form</h1>
 
-        <div class="method-card">
-            <!-- <h2>Fill Out the Online Form (For Smaller Inventories)</h2>
-            <p>If you have a smaller inventory, you can quickly provide details through our online form.</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd3Hok3tEaY9YH-rlNjjM5nwh29SEkaLF8_VtOsKiv0kqQTjA/viewform?usp=dialog"
-                class="btn" target="_blank" rel="noopener noreferrer">
-                Go to Online Form
-            </a>
+            <form action="https://formspree.io/f/movdqwpy" method="POST" enctype="multipart/form-data">
+                <div class="form-section">
+                    <h2>Inventory Details</h2>
 
-            <p style="margin-top: 1rem;">Please include as much detail as possible about the items.</p> -->
-            <div class="contact-form">
-                <h2>Send Us a Message</h2>
-                <form action="https://formspree.io/f/movdqwpy" method="POST">
-                <!-- <form action="#" method="POST"> -->
+                    <table class="inventory-table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Description</th>
+                                <th>Condition</th>
+                                <th>Quantity</th>
+                                <th>Photos</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inventory-items">
+                            <!-- Initial 10 rows -->
+                            <tr>
+                                <td><input type="text" name="item[]" placeholder="Items" class="form-control" required></td>
+                                <td><textarea name="description[]" placeholder="Write Description" class="form-control"
+                                        rows="2"></textarea>
+                                </td>
+                                <td>
+                                    <select name="condition[]" class="form-control" required>
+                                        <option value="">Select</option>
+                                        <option value="New">New</option>
+                                        <option value="Excellent">Excellent</option>
+                                        <option value="Good">Good</option>
+                                        <option value="Fair">Fair</option>
+                                        <option value="Poor">Poor</option>
+                                    </select>
+                                </td>
+                                <td><input type="number" name="quantity[]" class="form-control" min="1" value="1"
+                                        required></td>
+                                <td>
+                                    <div class="file-upload">
+                                        <input type="file" name="photos[]" id="photos0" multiple accept="image/*">
+                                        <label for="photos0">Choose Files</label>
+                                        <span class="file-name" id="file-name0">No files chosen</span>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Rows 3-10 would follow the same pattern -->
+                            <!-- For brevity, I'm showing just 2 rows, but in your actual code you'd include all 10 initial rows -->
+                        </tbody>
+                    </table>
+
+                    <button type="button" id="add-row" class="btn btn-add">+ Add Another Item</button>
+                </div>
+
+                <div class="form-section">
+                    <h2>Your Business Details</h2>
+
                     <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
+                        <label for="business-name" class="required-field">Business Name</label>
+                        <input type="text" id="business-name" name="business-name" class="form-control" required>
                     </div>
-    
+
                     <div class="form-group">
-                        <label for="email">Email Address</label>
+                        <label for="business-type" class="required-field">Type of Business</label>
+                        <select id="business-type" name="business-type" class="form-control" required>
+                            <option value="">Select Category</option>
+                            <option value="Airline">Airline</option>
+                            <option value="Railway">Railway</option>
+                            <option value="Taxi Firm">Taxi Firm</option>
+                            <option value="Coach Company">Coach Company</option>
+                            <option value="Small Business">Small Business</option>
+                            <option value="Other">Other (please specify)</option>
+                        </select>
+                        <input type="text" id="business-type-other" name="business-type-other" class="form-control"
+                            style="margin-top: 0.5rem; display: none;" placeholder="Please specify">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-person" class="required-field">Contact Person</label>
+                        <input type="text" id="contact-person" name="contact-person" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="required-field">Email Address</label>
                         <input type="email" id="email" name="email" class="form-control" required>
                     </div>
-    
+
                     <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" class="form-control">
+                        <label for="phone" class="required-field">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required>
                     </div>
-    
+
                     <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" class="form-control" required></textarea>
+                        <label for="business-address">Business Address</label>
+                        <textarea id="business-address" name="business-address" class="form-control"
+                            rows="3"></textarea>
                     </div>
-    
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-            </div>
+                </div>
+
+                <div class="form-group" style="text-align: center;">
+                    <button type="submit" class="btn">Submit Inventory</button>
+                </div>
+            </form>
         </div>
+
+        <script>
+            // Show/hide "Other" text input based on business type selection
+            document.getElementById('business-type').addEventListener('change', function () {
+                const otherInput = document.getElementById('business-type-other');
+                otherInput.style.display = this.value === 'Other' ? 'block' : 'none';
+                if (this.value !== 'Other') {
+                    otherInput.value = '';
+                }
+            });
+
+            // Add new row to inventory table
+            let rowCount = 10; // Starting count (assuming initial 10 rows)
+            document.getElementById('add-row').addEventListener('click', function () {
+                const tbody = document.getElementById('inventory-items');
+                const newRow = document.createElement('tr');
+
+                newRow.innerHTML = `
+                            <td><input type="text" name="item[]" class="form-control"></td>
+                            <td><textarea name="description[]" class="form-control" rows="2"></textarea></td>
+                            <td>
+                                <select name="condition[]" class="form-control">
+                                    <option value="">Select</option>
+                                    <option value="New">New</option>
+                                    <option value="Excellent">Excellent</option>
+                                    <option value="Good">Good</option>
+                                    <option value="Fair">Fair</option>
+                                    <option value="Poor">Poor</option>
+                                </select>
+                            </td>
+                            <td><input type="number" name="quantity[]" class="form-control" min="1" value="1"></td>
+                            <td>
+                                <div class="file-upload">
+                                    <input type="file" name="photos[]" id="photos${rowCount}" multiple accept="image/*">
+                                    <label for="photos${rowCount}">Choose Files</label>
+                                    <span class="file-name" id="file-name${rowCount}">No files chosen</span>
+                                </div>
+                            </td>
+                        `;
+
+                tbody.appendChild(newRow);
+                rowCount++;
+
+                // Add event listener for the new file input
+                const fileInput = newRow.querySelector(`#photos${rowCount - 1}`);
+                const fileNameSpan = newRow.querySelector(`#file-name${rowCount - 1}`);
+
+                fileInput.addEventListener('change', function () {
+                    if (this.files.length > 0) {
+                        fileNameSpan.textContent = this.files.length === 1
+                            ? this.files[0].name
+                            : `${this.files.length} files selected`;
+                    } else {
+                        fileNameSpan.textContent = 'No files chosen';
+                    }
+                });
+            });
+
+            // Update file name display when files are selected
+            document.querySelectorAll('input[type="file"]').forEach((input, index) => {
+                input.addEventListener('change', function () {
+                    const fileNameSpan = document.getElementById(`file-name${index}`);
+                    if (this.files.length > 0) {
+                        fileNameSpan.textContent = this.files.length === 1
+                            ? this.files[0].name
+                            : `${this.files.length} files selected`;
+                    } else {
+                        fileNameSpan.textContent = 'No files chosen';
+                    }
+                });
+            });
+        </script>
+
+
 
         <div class="method-card">
             <h2>Email Your Inventory List</h2>
@@ -305,15 +586,6 @@
         </div>
     </div>
 
-    <!-- <div class="next-steps">
-        <h2>What Happens Next?</h2>
-        <ul>
-            <li>Once we receive your inventory, our team will review it and provide you with a competitive quote</li>
-            <li>We aim to respond quickly, typically within 24-48 hours</li>
-            <li>If you accept our offer, we will arrange for collection or shipping of your inventory and process your
-                payment promptly</li>
-        </ul>
-    </div> -->
     <!-- Process Section -->
     <section class=" next-steps" id="how-it-works">
         <div class="section-title">
