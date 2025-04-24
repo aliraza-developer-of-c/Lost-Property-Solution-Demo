@@ -377,115 +377,6 @@
         width: 20px; /* or any size you want */
         height: 20px;
       }
-
-      /* Mobile responsive styles */
-  @media only screen and (max-width: 767px) {
-    /* Convert table to block layout */
-    table, tbody, tr, td {
-      display: block;
-      width: 100%;
-    }
-    
-    /* Hide table headers */
-    thead {
-      display: none;
-    }
-    
-    /* Style each row as a card */
-    tr {
-      margin-bottom: 20px;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      padding: 15px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      position: relative;
-    }
-    
-    /* Add labels before each input */
-    td {
-      padding: 10px 0;
-      border: none;
-    }
-    
-    td:nth-child(1)::before {
-      content: "Item:";
-      font-weight: bold;
-      display: block;
-      margin-bottom: 5px;
-      color: #555;
-    }
-    
-    td:nth-child(2)::before {
-      content: "Description:";
-      font-weight: bold;
-      display: block;
-      margin-bottom: 5px;
-      color: #555;
-    }
-    
-    td:nth-child(3)::before {
-      content: "Condition:";
-      font-weight: bold;
-      display: block;
-      margin-bottom: 5px;
-      color: #555;
-    }
-    
-    td:nth-child(4)::before {
-      content: "Quantity:";
-      font-weight: bold;
-      display: block;
-      margin-bottom: 5px;
-      color: #555;
-    }
-    
-    td:nth-child(5)::before {
-      content: "Photos:";
-      font-weight: bold;
-      display: block;
-      margin-bottom: 5px;
-      color: #555;
-    }
-    
-    /* Style inputs for mobile */
-    input, select {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 16px;
-    }
-    
-    /* Position delete button at top right */
-    .delbtn {
-      
-      top: 10px;
-      right: 10px;
-    }
-    
-    .fileupload {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    
-    input[type="file"] {
-      padding: 0;
-      border: none;
-    }
-  }
-  
-  /* Adjustments for very small phones */
-  @media only screen and (max-width: 400px) {
-    tr {
-      padding: 10px;
-    }
-    
-    input, select {
-      font-size: 14px;
-      padding: 8px;
-    }
-  }
       
     </style>
   </head>
@@ -992,15 +883,11 @@
   </td>
   <td>
     <div class="fileupload">
-        <input type="file" name="photos[]" id="photos${index}" multiple accept="image/*" />
-        </div>
-        </td>
-        <td>
-    <div class="fileupload">
-    <button type="button" class="delbtn" onclick="deleteRow(this)">
+      <input type="file" name="photos[]" id="photos${index}" multiple accept="image/*" />
+      <button type="button" class="delbtn" onclick="deleteRow(this)">
         <img class="delimag" src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" alt="Delete" />
       </button>
-      </div>
+    </div>
   </td>
 </tr>
           `;
