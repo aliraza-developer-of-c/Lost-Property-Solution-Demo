@@ -334,6 +334,16 @@
         cursor: pointer;
         border-radius: 5px;
       }
+      .delbtn{
+        border: none;
+        margin-left: 5px;
+        cursor: pointer;
+      }
+      .delimag{
+        width: 20px;
+        border: none;
+        background-color: transparent;
+      }
 
       @media (max-width: 768px) {
         .container {
@@ -463,7 +473,7 @@
                         accept="image/*"
                       />
                       <label for="photos0">Choose Files</label>
-                      <span class="file-name" id="file-name0"
+                      <span class="file-name" id="file-name"
                         >No files chosen</span
                       >
                     </div>
@@ -657,7 +667,6 @@
           }
         });
 
-
       // Update file name display when files are selected
       document
         .querySelectorAll('input[type="file"]')
@@ -675,59 +684,72 @@
           });
         });
     </script>
-    
 
     <script>
-  let itemIndex = 1;
+      let itemIndex = 1;
 
-  document.getElementById('add-row').addEventListener('click', function () {
-    const tableBody = document.getElementById('inventory-items');
+      function createRow(index) {
+        return `
+            <tr>
+              <td>
+                <input type="text" name="item[]" placeholder="Items" class="form-control" required />
+              </td>
+              <td>
+                <input type="text" name="item[]" placeholder="Description" class="form-control" required />
+              </td>
+              <td>
+                <select name="condition[]" class="form-control" required>
+                  <option value="">Select</option>
+                  <option value="New">New</option>
+                  <option value="Excellent">Excellent</option>
+                  <option value="Good">Good</option>
+                  <option value="Fair">Fair</option>
+                  <option value="Poor">Poor</option>
+                </select>
+              </td>
+              <td>
+                <input type="number" name="quantity[]" class="form-control" min="1" value="1" required />
+              </td>
+              <td>
+                <div class="file-upload">
+                  <input type="file" name="photos[]" id="photos${index}" multiple accept="image/*" />
+                  <div>
+                  <label for="photos${index}">Choose Files</label>
+                  
+                  <button type="button" class="delbtn" onclick="deleteRow(this)"> 
+                <img class='delimag'  src='https://cdn-icons-png.flaticon.com/512/6861/6861362.png'/></button>
+                </div>
+                </div>
+              </td>
+            </tr>
+          `;
+      }
 
-    const newRow = document.createElement('tr');
-    newRow.innerHTML = `
-      <td>
-        <input type="text" name="item[]" placeholder="Items" class="form-control" required />
-      </td>
-      <td>
-        <input type="text" name="item[]" placeholder="Description" class="form-control" required />
-      </td>
-      <td>
-        <select name="condition[]" class="form-control" required>
-          <option value="">Select</option>
-          <option value="New">New</option>
-          <option value="Excellent">Excellent</option>
-          <option value="Good">Good</option>
-          <option value="Fair">Fair</option>
-          <option value="Poor">Poor</option>
-        </select>
-      </td>
-      <td>
-        <input type="number" name="quantity[]" class="form-control" min="1" value="1" required />
-      </td>
-      <td>
-        <div class="file-upload">
-          <input type="file" name="photos[]" id="photos${itemIndex}" multiple accept="image/*" />
-          <label for="photos${itemIndex}">Choose Files</label>
-          <span class="file-name" id="file-name${itemIndex}">No files chosen</span>
-          <button type="button" class="xbtn btn-remove" style="margin-top: 5px;">X</button>
-        </div>
-      </td>
-    `;
+      document.getElementById("add-row").addEventListener("click", function () {
+        const tableBody = document.getElementById("inventory-items");
+        tableBody.insertAdjacentHTML("beforeend", createRow(itemIndex));
 
-    tableBody.appendChild(newRow);
-    itemIndex++;
-  });
+        // Attach file name change logic for new file input
+        const newFileInput = document.getElementById(`photos${itemIndex}`);
+        newFileInput.addEventListener("change", function () {
+          const fileNameSpan = document.getElementById(`file-name${itemIndex}`);
+          if (this.files.length > 0) {
+            fileNameSpan.textContent =
+              this.files.length === 1
+                ? this.files[0].name
+                : `${this.files.length} files selected`;
+          } else {
+            fileNameSpan.textContent = "No files chosen";
+          }
+        });
 
-  document.getElementById('inventory-items').addEventListener('click', function (e) {
-    if (e.target.classList.contains('btn-remove')) {
-      const row = e.target.closest('tr');
-      row.remove();
-    }
-  });
-</script>
+        itemIndex++;
+      });
 
-
-
-
+      function deleteRow(button) {
+        const row = button.closest("tr");
+        row.remove();
+      }
+    </script>
   </body>
 </html>
